@@ -1,0 +1,115 @@
+*{
+  text-decoration: none;
+}
+.table-container {
+  padding: 0 40px;
+}
+table {
+  font-family: "Lato", arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-weight:700;
+  
+}
+.btn{
+  background: #2e4291;
+  width: 115px;
+  height: 40px;
+  border-radius: 58px;
+}
+.div{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+thead {
+  background-color: #F0F3F7;
+  font-size:11px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  border-radius: 4px;
+  padding-left: 20px;
+}
+
+th:first-child {
+  padding-left: 20px;
+}
+
+th {
+  padding:20px 0;
+}
+
+
+
+.dashboard-table-image {
+  width: 72px;
+  height: 48px;
+  border-radius: 4px;
+  margin: 20px;
+
+  object-fit: cover;
+  object-position: center right;
+}
+
+.dashboard-table-flex-container {
+  display:flex;
+}
+
+.dashboard-table-image{
+  display:block;
+}
+
+.dashboard-table-name-location-container {
+  display:flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.dashboard-table-property-name {
+  font-size: 16px;
+}
+
+.dashboard-table-property-location {
+  font-size: 14px;
+  color: #90A0AD;
+
+}
+
+.table-row {
+  border-bottom: 1px solid #D3D4DF;
+}
+
+.project-status-pill {
+  padding: 6px 12px;
+  border-radius: 2px;
+  display:inline-block;
+  color: white;
+  text-transform:uppercase;
+  font-size: 12px;
+}
+
+.pill-green {
+  background-color: #2EBF6F;
+}
+
+.pill-gray {
+  background-color: #848892;
+}
+
+.dashboard-table-action-icon-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dashboard-table-action-icon {
+  height:16px;
+  width: 16px;
+  color: #8797A8;
+  margin-right: 10px;
+}

@@ -13,53 +13,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LooP</title>
 </head>
-
 <body>
-    <button><a class='btn btn-danger' href="{{ route('properities.create') }}">add</a></button>
-    <table class="table">
-        <thead>
-            <th>
-                <tr>
-                    <th scope="col">property name</th>
-                    <th scope="col">property address</th>
-                    <th scope="col">property price</th>
-                    <th scope="col">image</th>
-                    <th scope="col">property type</th>
-                    <th scope="col">number of beds</th>
-                    <th scope="col">type of process</th>
-                    <th scopez="col">number of rooms</th>
-                </tr>
-            </th>
-        </thead>
-        <tbody class="center">
-            @foreach ($data as $value)
-                <tr>
-                    {{-- <td>{{ $value->adevertisers->user['name'] }}</td> --}}
-                    <td>{{ $value['name'] }}</td>
-                    <td>{{ $value['address'] }}</td>
-                    <td>{{ $value['price'] }}</td>
-                    <td><img src="/storage/{{ $value['image'] }}" height="50px"></td>
-                    <td>{{ $value['properity_type'] }}</td>
-                    <td>{{ $value['number_of_beds'] }}</td>
-                    <td>{{ $value['type_of_process'] }}</td>
-                    <td>{{ $value['number_of_rooms'] }}</td>
+<div class="table-container">
+  <div class="div">
+    <a href="{{route('properities.create')}}"><button class="btn"> Add</button></a>
+       
+  </div>
+  <table>
+   <thead>
+      <tr>
+        <th>ADVERTISER name</th>
+        <th>property address</th>
+        <th>property price</th>
+        <th>image</th>
+        <th>property type</th>
+        <th>Air Conditioner</th>
+        <th>Wi-Fi</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+        
+  @foreach ($data as $value)
+    <tr class="table-row">
+    
+
+   
+      <td>{{ $value['address'] }}</td>
+      <td>{{ $value['price'] }}</td>
+      <td><img src="/storage/{{ $value ['image'] }}" height="50px"></td>
+      <td>{{ $value ['type'] }}</td>
+      <td>{{ $value ['Air Conditioner'] }}</td>
+      <td>{{ $value ['Wi-Fi'] }}</td>
+      <td><form method="POST" action="{{route('status',['status'=>$value])}}">
+        @csrf
+        @method('PUT')
+        <input type="submit" name="accept" value="Accept">
+        </form></td>
+         <td><form method="POST" action="{{route('statu',['status'=>$value])}}">
+          @csrf
+          @method('PUT')
+          <input type="submit" name="Reject" value="Reject">
+          </form></td>
+
+      <td>
+      <a class='btn btn-secondary'href="{{ route('properities.edit', ['properity' => $value]) }}">Edit</a>
+      <td>
+          <form method="POST" action="{{ route('properities.destroy', ['properity' => $value]) }}">
+              @csrf
+              @method('DELETE')
+              <input type="submit" class='btn btn-danger' name="submit" value="delete">
+          </form>
+      </td>
+      <!-- <td>
+        <div class="project-status-pill pill-green">Published</div>
+      </td>
+      <td>
+        <div class="dashboard-table-action-icon-container">
+          <i class="material-icons dashboard-table-action-icon ">send</i>
+          <a href="{{route('properities.edit',['properity'=>$value]) }}"><i class="material-icons dashboard-table-action-icon">edit</i></a>
+       </div>
+      </td> -->
 
 
-                    <td><a class='btn btn-secondary'
-                            href="{{ route('properities.edit', ['properity' => $value]) }}">Edit</a></td>
-                    <td>
-                        <form method="POST" action="{{ route('properities.destroy', ['properity' => $value]) }}">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" class='btn btn-danger' name="submit" value="delete">
-                        </form>
-                    </td>
-
-
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    </tr>
+  @endforeach
+  </tbody>
+ </table>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">

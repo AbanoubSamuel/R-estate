@@ -11,7 +11,7 @@
 </head>
 <body class="fahd">
     <div class="container" >
-    <h1>add your property</h1>
+    <h1>Edit your property</h1>
 <form method="POST" action="{{route('properities.update',['properity'=>$properity])}}">
   @csrf
   @method('PUT')

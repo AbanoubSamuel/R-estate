@@ -13,6 +13,7 @@ class Advertiser extends Model
         'national_id',
         'id_photo',
         'bank_account',
+        'isAdmin'
         
 ];
 
@@ -23,13 +24,8 @@ class Advertiser extends Model
     }
 
 
-   /**
-         * Get all of the comments for the Properity
-         *
-         * @return \Illuminate\Database\Eloquent\Relations\HasMany
-         */
-        public function properity(): HasMany
-        {
+         
+        public function properity(){
             return $this->hasMany(Properity::class);
         }
 }

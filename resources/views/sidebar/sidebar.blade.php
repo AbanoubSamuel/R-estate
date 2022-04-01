@@ -40,6 +40,16 @@
 
              </li>
              <li class="has-subnav">
+                 <a href="{{ Url('advertiser') }}">
+                     <i class="fa fa-list fa-2x"></i>
+                     <span class="nav-text">
+                         Advertiser
+                     </span>
+                 </a>
+
+             </li>
+
+             <li class="has-subnav">
                  <a href="{{ Url('showuser') }}">
                      <i class="fa fa-folder-open fa-2x"></i>
                      <span class="nav-text">

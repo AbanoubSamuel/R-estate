@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\AdvertiserController;
 use App\Models\cr;
 use App\Models\User;
+use App\Models\Advertiser;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,16 +13,17 @@ class AdminController extends Controller
     {
 
         // return view('sidebar.users');
-        $data=User::all();
+        $data=User::where('isAdmin','User');
         return view("usersDash.usersDash", ['data'=>$data]);
     }
     
     public function delete($id)
-    {
+     {      
         $data=User::find($id);
+         dd($data);
         $data->delete();
         
-        return redirect(route('admin'));
+        return redirect(route('usersTable'));
     }
 
     public function showuser()
@@ -30,15 +32,20 @@ class AdminController extends Controller
         return view ('sidebar.advertisersTable',['data'=>$data]);
 
     }
-    public function deluser($id)
+    public function destroyl($id)
     {
         // dd($id);
         $x=Advertiser::find($id);
-        // dd($x->user);
-        $x->user->delete();
+        foreach($x->properity as $item ){
+           $item->delete();
+        }
+        $user=$x->user;
+        //dd($x->user);
         $x->delete();
+        $user->delete();
+       
 
-        return  redirect(route('usersTable'));
+        return  redirect(route('advertiser'));
     }
     /**
      * Display a listing of the resource.
@@ -79,6 +86,21 @@ class AdminController extends Controller
         //
     }
 
+
+
+
+
+    // public function showAdver()
+    // {
+    //  $data=User::where('isAdmin','Advertiser')->get();
+    //  //dd($data);
+    //     return view ('sidebar.advertiser',['data'=>$data]);
+
+    //}
+
+
+    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -112,5 +134,21 @@ class AdminController extends Controller
     {
         //
         
+    }
+
+
+
+
+
+
+    public function destroyAdver($id)
+    {
+        // dd($id);
+        $x=Advertiser::find($id);
+         //dd($x);
+        $x->user->delete();
+        $x->delete();
+
+        return  redirect(route('advertiser'));
     }
 }

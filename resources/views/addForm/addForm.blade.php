@@ -1,6 +1,3 @@
-@can('isAdmin' OR 'isAdvertiser')
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,10 +18,10 @@
       
               @csrf
                       <p>
-                        <label for="nome" class="colocar_nome">Property Name
+                        <label for="nome" class="colocar_nome">Advertiser Name
                           <span class="obrigatorio">*</span>
                         </label>
-                          <input type="text" name="name" id="nome" required="obrigatorio" placeholder="Appartment">
+                          <input type="text" name="name" id="nome" required="obrigatorio" placeholder="Ahmed">
                       </p>
                     
                       <p>
@@ -102,11 +99,6 @@
       </body>
       </html>
       
-      @else
-      <h1>Not Authirsed</h1>
-      
-      @endcan
-      <!-- created by magda pimentel, may 2017 -->
-      
+     
       
       

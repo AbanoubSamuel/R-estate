@@ -16,7 +16,12 @@ class ProperityController extends Controller
      */
     public function index()
     {
-        $data=Properity::all();
+        if(Auth::user()['isAdmin']=='Admin'){
+            $data=Properity::all();
+        }else{
+        $x=Auth::user()->advertiser;
+        $data=$x->properity;
+        }
         return view("Properity.Feed", ['data'=>$data]);
     }
 
@@ -29,16 +34,16 @@ class ProperityController extends Controller
      */
     public function create()
     {
-        $role=Auth::user()['isAdmin'];
-        if($role=='Admin' OR 'Advertiser'){
+        // $role=Auth::user()['isAdmin'];
+        // if($role=='Admin' OR 'Advertiser'){
 
             return view('addForm.addForm');
-        }
-        else 
-        {
+        // }
+        // else 
+        // {
         
-            return redirect(route('home'));
-        }
+        //     return redirect(route('home'));
+        // }
     }
     
     
@@ -72,9 +77,8 @@ class ProperityController extends Controller
             'price'=>$request['price'],
             'image'=>$filePath,
             'type'=>$request['type'],
-            'status'=>$request['status'],
+            'status'=>'pending',
             'desc'=>$request['desc'],
-            'status'=>$request['status'],
             'Wi-Fi'=>$request['Wi-Fi'],
             'Air Conditioner'=>$request['Air Conditioner'],
             'advertiser_id'=>$id
@@ -156,4 +160,20 @@ class ProperityController extends Controller
         $properity->delete();
         return redirect(route('properities.index'));
     }
+
+    public function status(Properity $status)
+    {
+        $status->update(['status'=>'approved']);
+        return redirect(route('properities.index'));
+
+    }     
+    public function statu(Properity $status)
+    {  
+        $status->update(['status'=>'rejected']);
+        return redirect(route('properities.index'));
+
+     }
+
+
+
 }

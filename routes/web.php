@@ -35,7 +35,11 @@ Route::resource('add', AdvertiserController::class);
 Route::resource('registerAdvertiser', AdvertiserController::class);
 
 
-    // Route::resource('admin', AdminController::class);
+Route::get('advertiser', [AdminController::class,'showuser'])->name('advertiser');
+
+Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy');
+
+    Route::delete('admin/{id}',[AdminController::class,'delete'])->name('delete');;
     
 
         Route::get('result', [ProperityController::class,'display']);
@@ -58,6 +62,14 @@ Route::resource('registerAdvertiser', AdvertiserController::class);
 
     // Route::get('show', function () {
     //     return view('show.show');
+
+
+
+
+
+
+    Route::put('statu/{status}',[ProperityController::class,'status'])->name('status');
+  Route::put('status/{status}',[ProperityController::class,'statu'])->name('statu');
     // });
 
    Route::get('sider', function () {

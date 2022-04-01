@@ -18,7 +18,7 @@
       
               @csrf
                       <p>
-                        <label for="nome" class="colocar_nome">Property Name
+                        <label for="nome" class="colocar_nome">Advertiser Name
                           <span class="obrigatorio">*</span>
                         </label>
                           <input type="text" name="name" id="nome" required="obrigatorio" placeholder="Appartment">

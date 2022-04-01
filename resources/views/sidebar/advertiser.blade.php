@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -15,37 +16,34 @@
         <thead class="table-dark">
             <tr>
                 <th>id</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>name</th>
+                <th>EMAil</th>
                 <th>Address</th>
                 <th>Age</th>
                 <th>Phone</th>
-                <th>National ID</th>
-                <th>ID Photo</th>
-                <th>Bank Account</th>
+                <th>national Id</th>
+                <th>Idphoto</th>
+                <th>bank Account</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             @foreach($data as $value)
             <tr class="table-primary">
-            
-            {{-- <td>{{$value->adevertiser->user['name']}}</td> --}}
             <td>{{$value['id']}}</td>
             <td>{{$value['name']}}</td>
             <td>{{$value['email']}}</td>
             <td>{{$value['age']}}</td>
            <td>{{$value['mobile']}}</td>
            <td>{{$value['address']}}</td>
-           <td>{{$value->Advertiser['national_id']}}</td>
-           <td>{{$value->Advertiser['id_photo']}}</td>
-           <td>{{$value->Advertiser['bank_account']}}</td>
-           <td><form method="POST" action="{{route('destroy',['id'=>$value->Advertiser['id']])}}">
+           <td>{{$value->user['national_id']}}</td>
+           <td>{{$value->user['id_photo']}}</td>
+           <td>{{$value->user['bank_account']}}</td>
+           <td><form method="post" action="{{route('destroy',['id'=>$value->user['id']])}}">
             @csrf
            @method('DELETE') 
-                <input name="submit" type="submit" value="Delete"/></form></td>
+                <input name="supmiet" type="submit" value="Delete"/></form></td>
           </tr>
-          
           @endforeach
         </tbody>
     </table>

@@ -69,6 +69,7 @@ class AdvertiserController extends Controller
         'national_id'=>$request['national_id'],
         'id_photo'=>$request['id_photo'],
         'bank_account'=>$request['bank_account'],
+        
     ]);
     return redirect(route('login'));
     }

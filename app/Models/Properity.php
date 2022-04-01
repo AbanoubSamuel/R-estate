@@ -28,7 +28,9 @@ class Properity extends Model
         'number_of_beds',
         'type_of_process',
         'number_of_rooms',
-        'desc'
+        'desc',
+        'status'
+        
     ];
 
     

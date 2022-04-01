@@ -57,7 +57,7 @@
                     @auth
 
                         @if (Auth::user()->isAdmin == 'Admin')
-                            <li><a class="nav-link" href="{{ 'admin_profile' }}">{{ __('Admin') }}</a></li>
+                            <li><a class="nav-link" href="{{ 'sider' }}">{{ __('Admin') }}</a></li>
                         @endif
                     @endauth
 
@@ -100,7 +100,7 @@
                         </li>
                         @auth
 
-                            @if (Auth::user()->isAdmin == 'Advertiser' or 'Admin')
+                            @if (Auth::user()->isAdmin == 'Advertiser' OR Auth::user()->isAdmin =='Admin')
                                 <li><a href="/properities" class="page-scroll">DASHBOARD</a></li>
                             @endif
                         @endauth

@@ -28,7 +28,6 @@
                 @foreach ($data as $value)
                     <tr class="table-primary">
 
-                        {{-- <td>{{$value->adevertiser->user['name']}}</td> --}}
                         <td>{{ $value['id'] }}</td>
                         <td>{{ $value['name'] }}</td>
                         <td>{{ $value['email'] }}</td>
@@ -36,12 +35,14 @@
                         <td>{{ $value['age'] }}</td>
                         <td>{{ $value['mobile'] }}</td>
                         <td>{{ $value['address'] }}</td>
-                        {{-- <td><form method="POST" action="{{route('admin.destroy',['data'=>$value])}}"> --}}
-                        <td><a href={{ 'delete/' . $value['id'] }}>Delete</a></td>
-
-
-                        {{-- @csrf
-            @method('DELETE') --}}
+                       <td>
+                           <form method="POST" action="{{route('delete',['id'=>$value['id']])}}">
+                           @csrf
+                           @method('DELETE')
+                          <input type="submit" class='btn btn-danger' name="submit" value="delete">
+                        
+                         </form>
+                       </td> 
                     </tr>
                 @endforeach
             </tbody>

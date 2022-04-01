@@ -39,13 +39,16 @@ Route::get('advertiser', [AdminController::class,'showuser'])->name('advertiser'
 
 Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy');
 
-    Route::delete('admin/{id}',[AdminController::class,'delete'])->name('delete');;
+    Route::delete('admin/{id}',[AdminController::class,'delete'])->name('delete');
     
-
         Route::get('result', [ProperityController::class,'display']);
 
 
-          Route::resource('properities', ProperityController::class);
+                           //Testing Route 
+        //Route::resource('feeder', ProperityController::class);
+
+
+         Route::resource('properities', ProperityController::class);
 
 
          Route::get('registerAdvertiser', function () {
@@ -54,6 +57,7 @@ Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy
 
 
      Route::get('home', function () {
+
          return view('myHome');
      });
 
@@ -72,9 +76,12 @@ Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy
   Route::put('status/{status}',[ProperityController::class,'statu'])->name('statu');
     // });
 
-   Route::get('sider', function () {
-       return view('sidebar.sidebar');
-   });
+    //Route::get('sider', [ProperityController::class,'sider']);
+
+
+//    Route::get('sider', function () {
+//        return view('sidebar.sidebar');
+//    });
    
    
    Route::get('user', function () {
@@ -85,7 +92,11 @@ Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy
   Route::get('notAuthorised', function () {
       return view('error.error');
   });
-
+  
+//   Route::get('indexer', function () {
+//     return view('Properity.Feed');
+// });
+  
 //   Route::get('users-table', function () {
 //       return view('usersDash.usersDash');
 //   });

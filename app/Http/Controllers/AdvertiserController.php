@@ -38,7 +38,7 @@ class AdvertiserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'mobile' => ['required', 'string','min:11', ],
-            'bank_account' => ['required', 'string', 'min:'],
+            'bank_account' => ['required', 'string', 'min:9'],
             'id_photo' => ['required', 'string'],
             'national_id' => ['required', 'string', 'min:14'],
             'address' => ['required', 'string'],

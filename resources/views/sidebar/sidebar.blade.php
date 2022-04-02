@@ -1,4 +1,7 @@
-@guest
+@auth
+
+                        @if (Auth::user()->isAdmin == 'Admin')
+{{-- @guest
     <!DOCTYPE html>
     <html lang="en">
 
@@ -27,7 +30,7 @@
         </body>
 
     </html>
-@else
+@else --}}
     <!DOCTYPE html>
     =======
 
@@ -163,6 +166,8 @@
             </ul>
         </nav>
     </body>
-@endguest
+
 
 </html>
+@endif
+                    @endauth

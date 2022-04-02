@@ -7,11 +7,7 @@
     <title>FAAA</title>
     <meta name="description" content="">
     <meta name="author" content="">
-<<<<<<< HEAD
     herf ="{{ asset('img\favicon.ico') }}"
-=======
-    <link herf="{{ asset('img\favicon.ico') }}">
->>>>>>> aa9fb6ce1121be0673867de83f7ad6b37a9f3999
     <link rel="shortcut icon" href="{{ asset('img\favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img\apple-touch-icon-72x72.png') }}">
@@ -26,21 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('home_css\nivo-lightbox\default.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<<<<<<< HEAD
-=======
-
-    {{-- The addForm HTML --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('dash_css/dash.css') }}" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LooP</title>
->>>>>>> aa9fb6ce1121be0673867de83f7ad6b37a9f3999
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">

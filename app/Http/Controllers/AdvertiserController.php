@@ -31,20 +31,20 @@ class AdvertiserController extends Controller
         // return view('add');
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
-            'mobile' => ['required', 'string','min:11', ],
-            'bank_account' => ['required', 'string', 'min:9'],
-            'id_photo' => ['required', 'string'],
-            'national_id' => ['required', 'string', 'min:14'],
-            'address' => ['required', 'string'],
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:8'],
+    //         'mobile' => ['required', 'string','min:11', ],
+    //         'bank_account' => ['required', 'string', 'min:9'],
+    //         'id_photo' => ['required', 'string'],
+    //         'national_id' => ['required', 'string', 'min:14'],
+    //         'address' => ['required', 'string'],
             
-        ]);
-    }
+    //     ]);
+    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -108,6 +108,8 @@ class AdvertiserController extends Controller
         //
     }
 
+
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -118,4 +120,16 @@ class AdvertiserController extends Controller
     {
         //
     }
+
+
+
+    public function editadvertiver(User $data)
+    {
+        
+     //dd($data);
+        return view("profile.editprofile",['data'=>$data]); //,['data'=>$data]);
+        
+    
+    }
+
 }

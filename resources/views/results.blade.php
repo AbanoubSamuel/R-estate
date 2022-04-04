@@ -1,35 +1,6 @@
 @extends('template')
 @section('nav')
 @endsection
-@guest
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ Url('error/error.css') }}">
-        <title>Document</title>
-    </head>
-
-    <body class="container" style="text-align: center;">
-        <div class="mars"></div>
-        <img src="https://assets.codepen.io/1538474/404.svg" class="logo-404" />
-        <img src="https://assets.codepen.io/1538474/meteor.svg" class="meteor" />
-        <p class="title">Oh no!!</p>
-        <p class="subtitle">
-            Please <br /> SignUp!.
-        </p>
-        <div style="align-center">
-            <a class="btn-back" href="{{ Url('login') }}">SignUp!</a>
-        </div>
-        <img src="https://assets.codepen.io/1538474/astronaut.svg" class="astronaut" />
-        <img src="https://assets.codepen.io/1538474/spaceship.svg" class="spaceship" />
-
-        <script src="{{ Url('error/error.js') }}"></script>
-    </body>
-@else
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <nav id="menu" class="navbar navbar-default navbar-fixed-top">
@@ -57,12 +28,12 @@
                 <div class="row">
                     @foreach ($data as $item)
                         <div class="col-md-6">
-                            <div class="service-media"> <img src="/storage/{{ $item['image'] }}" /></div>
+                            <div class="service-media"> <img src="/storage/{{ $item['image1'] }}" /></div>
                             <div class="service-desc">
                                 <h3>{{ $item['name'] }}</h3>
                                 <p>{{ $item['desc'] }}</p>
                                 <button id="open" class="btn border border-radious bg-success"><a
-                                        href="{{ Url('show') }}">More Info</a>
+                                        href="{{route('properities.show',['properity'=>$item]) }}">More Info</a>
                                 </button>
                             </div>
                         </div>
@@ -138,7 +109,7 @@
                 <p>&copy; 2022 REstate. Design by <a href="http://www.templatewire.com" rel="nofollow">FAAA</a></p>
             </div>
         </div>
-<<<<<<< HEAD
+
         <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/SmoothScroll.js"></script>
@@ -147,26 +118,4 @@
         <script type="text/javascript" src="js/contact_me.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
-@endguest
-
 </html>
-=======
-      </div>
-    </div>
-    <!-- Footer Section -->
-    <div id="footer">
-      <div class="container text-center">
-        <p>&copy; 2022 REstate. Design by <a href="http://www.templatewire.com" rel="nofollow">FAAA</a></p>
-      </div>
-    </div>
-    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/nivo-lightbox.js"></script>
-    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-    <script type="text/javascript" src="js/contact_me.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
-</html>
-@endguest
->>>>>>> aa9fb6ce1121be0673867de83f7ad6b37a9f3999

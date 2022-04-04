@@ -16,11 +16,11 @@ class ProperityController extends Controller
      */
     public function index()
     {
-        if(Auth::user()['isAdmin']=='Admin'){
+        if (Auth::user()['isAdmin']=='Admin') {
             $data=Properity::all();
-        }else{
-        $x=Auth::user()->advertiser;
-        $data=$x->properity;
+        } else {
+            $x=Auth::user()->advertiser;
+            $data=$x->properity;
         }
         return view("Properity.Feed", ['data'=>$data]);
     }
@@ -37,9 +37,9 @@ class ProperityController extends Controller
         // $role=Auth::user()['isAdmin'];
         // if($role=='Admin' OR 'Advertiser'){
 
-            return view('addForm.addForm');
+        return view('addForm.addForm');
         // }
-        // else 
+        // else
         // {
         
         //     return redirect(route('home'));
@@ -53,16 +53,24 @@ class ProperityController extends Controller
 
     public function store(Request $request)
     {
-       
-        // $request->validate([
-        //     'title'=>'required|max:10',
-        //     'body'=>'required|min:10'
-        // ]);
-        $image=$request->file("image");
-        $filePath = $request->file('image')->storeAs('images', $image, 'public');
-       
-        // dd($filePath);
-      
+        $image1=optional($request->file("image1"))->getClientOriginalName();
+            $filePath1 = optional($request->file('image1'))->storeAs('images', $image1, 'public');
+
+                    $image2=optional($request->file("image2"))->getClientOriginalName();
+                      $filePath2 = optional($request->file('image2'))->storeAs('images', $image2, 'public');
+
+                           $image3=optional($request->file("image3"))->getClientOriginalName();
+                                 $filePath3 = optional($request->file('image3'))->storeAs('images', $image3, 'public');
+
+                         $image4=optional($request->file("image4"))->getClientOriginalName();
+                     $filePath4 = optional($request->file('image4'))->storeAs('images', $image4, 'public');
+
+                 $image5=optional($request->file("image5"))->getClientOriginalName();
+               $filePath5 = optional($request->file('image5'))->storeAs('images', $image1, 'public');
+
+        // move_uploaded_file($_FILES["image1"]['tmp_name'],"storage/images/".$personalImage);
+        
+    
         //    dd($id=Auth::user());
         //   dd(Auth::user());
         if (Auth::user()->advertiser) {
@@ -75,7 +83,11 @@ class ProperityController extends Controller
             'name'=>$request['name'],
             'address'=>$request['address'],
             'price'=>$request['price'],
-            'image'=>$filePath,
+            'image1'=>$filePath1,
+            'image2'=>$filePath2,
+            'image3'=>$filePath3,
+            'image4'=>$filePath4,
+            'image5'=>$filePath5,
             'type'=>$request['type'],
             'status'=>'pending',
             'desc'=>$request['desc'],
@@ -101,7 +113,9 @@ class ProperityController extends Controller
      
     public function show(Properity $properity)
     {
-        return view("show.show", ['data'=>$properity]);
+
+        //dd($properity);
+        return view("slider.slider", ['data'=>$properity]);
     }
     
 
@@ -110,6 +124,7 @@ class ProperityController extends Controller
         $data=Properity::all();
         return view("results", ['data'=>$data]);
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -131,18 +146,47 @@ class ProperityController extends Controller
      */
     public function update(Request $request, Properity $properity)
     {
-        $image=now($request->file("image"))->getClientOriginalName();
-        $filePath = $request->file('image')->storeAs('images', $image, 'public');
-        // use here the method to move pics to storage
+        $image1=optional($request->file("image1"))->getClientOriginalName();
+            $filePath1 = optional($request->file('image1'))->storeAs('images', $image1, 'public');
+
+                    $image2=optional($request->file("image2"))->getClientOriginalName();
+                      $filePath2 = optional($request->file('image2'))->storeAs('images', $image2, 'public');
+
+                           $image3=optional($request->file("image3"))->getClientOriginalName();
+                                 $filePath3 = optional($request->file('image3'))->storeAs('images', $image3, 'public');
+
+                         $image4=optional($request->file("image4"))->getClientOriginalName();
+                     $filePath4 = optional($request->file('image4'))->storeAs('images', $image4, 'public');
+
+                 $image5=optional($request->file("image5"))->getClientOriginalName();
+               $filePath5 = optional($request->file('image5'))->storeAs('images', $image1, 'public');
+
+
+
+        
+        //   dd($filePath);
+
+        if (Auth::user()->advertiser) {
+            $id=Auth::user()->advertiser["id"];
+        } else {
+            $id=Auth::id();
+        }
         $properity->update([
             // 'id'=>$request['id'],
             'name'=>$request['name'],
             'address'=>$request['address'],
             'price'=>$request['price'],
-            'image'=>$filePath,
-            'properity_type'=>$request['properity_type'],
-            'number_of_beds'=>$request['number_of_beds'],
-            'number_of_rooms'=>$request['number_of_rooms'],
+            'image1'=>$filePath1,
+            'image2'=>$filePath2,
+            'image3'=>$filePath3,
+            'image4'=>$filePath4,
+            'image5'=>$filePath5,
+            'type'=>$request['type'],
+            'status'=>'pending',
+            'desc'=>$request['desc'],
+            'Wi-Fi'=>$request['Wi-Fi'],
+            'Air Conditioner'=>$request['Air Conditioner'],
+            'advertiser_id'=>$id
             
            
         ]);
@@ -165,15 +209,15 @@ class ProperityController extends Controller
     {
         $status->update(['status'=>'approved']);
         return redirect(route('properities.index'));
-
-    }     
+    }
     public function statu(Properity $status)
-    {  
+    {
         $status->update(['status'=>'rejected']);
         return redirect(route('properities.index'));
-
-     }
-
-
-
+    }
+     
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

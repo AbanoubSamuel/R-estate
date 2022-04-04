@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->integer('age');
-            $table->string('mobile');
+            $table->string('mobile')->nullable(); 
             $table->string('address');
             $table->enum('isAdmin', ['Admin', 'User','Advertiser'])->default('User');
 

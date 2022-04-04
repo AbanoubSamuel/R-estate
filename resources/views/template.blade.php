@@ -7,19 +7,19 @@
     <title>FAAA</title>
     <meta name="description" content="">
     <meta name="author" content="">
-    herf ="{{ asset('img\favicon.ico') }}"
-    <link rel="shortcut icon" href="{{ asset('img\favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" name="" herf ="{{ asset('img/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img\apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img\apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/apple-touch-icon-114x114.png') }}">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('home_css\bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('fonts\font-awesome\css\font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home_css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome/css/font-awesome.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('home_css\style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('home_css\nivo-lightbox\nivo-lightbox.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('home_css\nivo-lightbox\default.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home_css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home_css/nivo-lightbox/nivo-lightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home_css/nivo-lightbox/default.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
@@ -102,7 +102,7 @@
                         @auth
 
                             @if (Auth::user()->isAdmin == 'Advertiser' or Auth::user()->isAdmin == 'Admin')
-                                <li><a href="/properities" class="page-scroll">DASHBOARD</a></li>
+                                <li><a href="/profiler" class="page-scroll">DASHBOARD</a></li>
                             @endif
                         @endauth
                     @endguest
@@ -113,16 +113,6 @@
     </nav>
 
     @yield('nav')
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -8,7 +8,6 @@ html {
     width: 100% !important;
     height: 100% !important;
 }
-
 h2 {
     font-family: 'Montserrat', sans-serif;
     margin: 0 0 20px 0;
@@ -16,7 +15,6 @@ h2 {
     font-size: 32px;
     color: #333;
 }
-
 h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
@@ -52,7 +50,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #e52f3c;
+    color: #e52f99;
 }
 
 ul,
@@ -63,8 +61,8 @@ ol {
 ul,
 ol {
     padding: 0;
-    webkit-padding: 0;
-    moz-padding: 0;
+    -webkit-box-sizing: 0;
+    scroll-padding: 0;
 }
 
 hr {
@@ -75,7 +73,7 @@ hr {
     background: #1E7A46;
     margin-bottom: 20px;
     border: 0;
-}
+} 
 
 /* Navigation */
 #menu {
@@ -84,14 +82,14 @@ hr {
 }
 
 #menu.navbar-default {
-    background-color: #fff;
+    background-color: #F4F3EE;
     border-color: rgba(231, 231, 231, 0);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2)
 }
 
 #menu a.navbar-brand {
     font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     color: #1f386e;
     text-transform: uppercase;
@@ -99,10 +97,10 @@ hr {
 }
 
 #menu.navbar-default .navbar-nav>li>a {
-    font-family: 'Montserrat', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     text-transform: uppercase;
     color: #1f386e;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     padding: 8px 2px;
     border-radius: 0;
@@ -217,7 +215,7 @@ a:focus,
     display: table;
     width: 100%;
     padding: 0;
-    background: url(../img/intro-bg.jpg) center center no-repeat;
+    background: url(../img/RolaMu\ —\ Nubian\ house.jpg) center center no-repeat;
     background-color: #e5e5e5;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -226,7 +224,7 @@ a:focus,
 }
 
 .intro .overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.0);
 }
 
 .intro h1 {
@@ -236,7 +234,7 @@ a:focus,
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0)
 }
 
 .intro p {
@@ -712,8 +710,8 @@ label {
   display: block;
   float: left;
   font-family: 'Cabin', helvetica, arial, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 5px;
+  font-weight: 200;
   height: 40px;
   margin: 0;
   padding: 0 10px;
@@ -778,7 +776,7 @@ label {
 .webdesigntuts-workshop button:focus {
   background: #292929;
   background: linear-gradient(#393939, #292929);
-  color: #5f5;
+  color: rgb(218, 255, 85);
   outline: none;
 }
 

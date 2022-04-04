@@ -23,23 +23,29 @@ class Properity extends Model
         'name',
         'address',
         'price',
-        'image',
-        'properity_type',
+        'image1',
+        'image2',
+        'image3',
+        'image4',
+        'image5',
+        'type',
         'number_of_beds',
-        'type_of_process',
         'number_of_rooms',
         'desc',
-        'status'
+        'status',
         
     ];
 
     
-    public function advertiser()
-    {
-        return $this->belongsTo(Advertiser::class);
-    }
+    // public function advertiser()
+    // {
+    //     return $this->belongsTo(Advertiser::class);
+    // }
 
-
+    // public function properity()
+    // {
+    //     return $this->hasMany(Image::class);
+    // }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -57,5 +63,6 @@ class Properity extends Model
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+ 
     ];
 }

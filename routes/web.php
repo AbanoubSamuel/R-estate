@@ -24,31 +24,8 @@ Route::get('/register', 'RegistrationController@create');
 // Login and Regist routes
 
 
-Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::resource('add', AdvertiserController::class);
-
-
 Route::resource('registerAdvertiser', AdvertiserController::class);
 
-
-Route::get('advertiser', [AdminController::class,'showuser'])->name('advertiser');
-
-Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy');
-
-    Route::delete('admin/{id}',[AdminController::class,'delete'])->name('delete');
-    
-        Route::get('result', [ProperityController::class,'display']);
-
-
-                           //Testing Route 
-        //Route::resource('feeder', ProperityController::class);
-
-
-         Route::resource('properities', ProperityController::class);
 
 
          Route::get('registerAdvertiser', function () {
@@ -56,78 +33,87 @@ Route::delete('destroy/{id}',[AdminController::class,'destroyl'])->name('destroy
          });
 
 
-     Route::get('home', function () {
-
-         return view('myHome');
-     });
+Auth::routes();
 
 
-     Route::get('show', [ProperityController::class,'show']);
+Route::group(['middleware' => ['auth']], function () {
 
-    // Route::get('show', function () {
-    //     return view('show.show');
+Route::get('rprofile', function () {
+    return view('profile.profile')->name('profiler');
+});
 
-
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
 
-    Route::put('statu/{status}',[ProperityController::class,'status'])->name('status');
-  Route::put('status/{status}',[ProperityController::class,'statu'])->name('statu');
-    // });
+    Route::resource('add', AdvertiserController::class);
 
-    //Route::get('sider', [ProperityController::class,'sider']);
+    Route::get('advertiser', [AdminController::class,'showuser'])->name('advertiser');
 
+    Route::delete('destroy/{id}', [AdminController::class,'destroyl'])->name('destroy');
 
-//    Route::get('sider', function () {
-//        return view('sidebar.sidebar');
-//    });
-   
-   
-   Route::get('user', function () {
-       return view('sidebar.users');
-   });
+    Route::delete('admin/{id}', [AdminController::class,'delete'])->name('delete');
+    
+    Route::get('result', [ProperityController::class,'display']);
 
+    Route::get('advertiser', [AdminController::class,'showuser'])->name('advertiser');
 
-  Route::get('notAuthorised', function () {
-      return view('error.error');
-  });
-  
-//   Route::get('indexer', function () {
-//     return view('Properity.Feed');
-// });
-  
-//   Route::get('users-table', function () {
-//       return view('usersDash.usersDash');
-//   });
+    Route::delete('destroy/{id}', [AdminController::class,'destroyl'])->name('destroy');
 
+    Route::delete('admin/{id}', [AdminController::class,'delete'])->name('delete');
+    
+    Route::get('result', [ProperityController::class,'display']);
 
-Route::get('usersTable', [AdminController::class,'index']);
-
-//Route::delete('Delete{id}', [AdminController::class,'delete']);
-
-Route::delete('deluser/{id}', [AdminController::class,'deluser'])->name('deluser');
-
-
-//Route::get('showuser', [AdminController::class,'showuser']);
+    Route::resource('properities', ProperityController::class);
 
 
 
-// Route::get('results',function(){
-//     return view('results');
-// });
+    Route::put('statu/{status}', [ProperityController::class,'status'])->name('status');
+    Route::put('status/{status}', [ProperityController::class,'statu'])->name('statu');
+
+    Route::get('usersTable', [AdminController::class,'index']);
+
+    Route::delete('deluser/{id}', [AdminController::class,'deluser'])->name('deluser');
 
 
-// Route::get('dashboard',function(){
-//     return view('Properity.Feed');
-// });
-
-
-//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('user', function () {
+        return view('sidebar.users');
+    });
 
 
 
+    Route::get('sider', function () {
+        return view('sidebar.sidebar');
+    });
 
-// Route::get('login',function(){
-//     return view('auth.login');
-// });
+    Route::get('home', function () {
+        return view('myHome');
+    });
+
+ 
+
+
+
+    Route::get('notAuthorised', function () {
+        return view('error.error');
+    });
+
+
+
+
+
+
+
+
+
+         Route::get('profile/{data}', [AdvertiserController::class,'editadvertiver'])->name('profile');
+
+            Route::PUT('updateprofile/{data}', [AdminController::class,'updateprofile'])->name('updateprofile');
+
+         Route::get('profiler', function () {
+             return view('profile.profile');
+         });
+
+
+        });

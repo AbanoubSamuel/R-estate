@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body class="fahd">
     <div class="container" >
     <h1>add your property</h1>
@@ -38,9 +37,7 @@
         <option value="5">five</option>
         <option value="6">six</option>
         <option value="7">more</option>
-
     </select>
-
     <label for="beds" class="form-control"><strong>Wi-Fi Connection:</strong></label>  <br>
     <select class="form-select" name="Wi-Fi" aria-label= disabled>
         <option value="Yes" class="form-control">Yes</option>
@@ -54,7 +51,6 @@
     </select>
     <br>
 
-
   </select>
 <label for="">number of rooms</label>
 <select class="form-select" name="number_of_rooms" aria-label= disabled>
@@ -65,12 +61,9 @@
     <option value="3">five</option>
     <option value="3">more</option>
     <br>
-   
-
+  
   </select><br>
   <textarea name="desc" class="form-control"  placeholder="Type a short description about your ad here."></textarea>
-
-
 <br>
 {{-- <div class="input-group">
     <span class="input-group-text">more details of property</span>

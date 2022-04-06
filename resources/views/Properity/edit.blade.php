@@ -38,10 +38,30 @@
                       </p>		
                     
                       <p>
-                        <label for="website" class="colocar_website">Image
+                        <label for="website" class="colocar_website">Image1
                         </label>
-                          <input type="file" name="image1" value="{{$properity['image1']}}" id="website" multiple>
+                          <input type="file" name="image1" id="website" >
                       </p>		
+                      <p>
+                        <label for="website" class="colocar_website">Image2
+                        </label>
+                          <input type="file" name="image2"  id="website" >
+                      </p>	
+                      <p>
+                        <label for="website" class="colocar_website">Image3
+                        </label>
+                          <input type="file" name="image3"  id="website" >
+                      </p>	
+                      <p>
+                        <label for="website" class="colocar_website">Image4
+                        </label>
+                          <input type="file" name="image4"  id="website" >
+                      </p>	
+                      <p>
+                        <label for="website" class="colocar_website">Image5
+                        </label>
+                          <input type="file" name="image5"  id="website" >
+                      </p>	
                     
                       <p>
                         <label for="assunto" class="colocar_asunto">Property Type

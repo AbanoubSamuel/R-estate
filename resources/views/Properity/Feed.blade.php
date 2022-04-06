@@ -28,15 +28,16 @@
     <table>
         <thead>
             <tr>
-                <th>ADVERTISER Name</th>
-                <th>property address</th>
-                <th>property price</th>
-                <th>image</th>
-                <th>property type</th>
-                <th>Air Conditioner</th>
+                <th>Title</th>
+                <th>property Price</th>
+                <th>Image</th>
+                <th>Property Category</th>
+
                 <th>Wi-Fi</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>Air Conditioner</th>
+                
+                <th>Accept</th>
+                <th>Reject</th>
             </tr>
         </thead>
         <tbody>

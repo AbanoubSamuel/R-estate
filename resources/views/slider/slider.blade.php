@@ -23,7 +23,7 @@
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
 
-                    <img src="/storage/{{ $data['image2'] }}" />
+                    <img src="/storage/{{ $data['image1'] }}" />
                 </div>
                 <div class="blog-slider__content">
                     <span class="blog-slider__code">5 April 2022</span>
@@ -34,7 +34,7 @@
             </div>
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    <img src="/storage/{{ $data['image3'] }}" />
+                    <img src="/storage/{{ $data['image2'] }}" />
                 </div>
                 <div class="blog-slider__content">
                     <span class="blog-slider__code">5 April 2022</span>
@@ -46,7 +46,7 @@
 
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    <img src="/storage/{{ $data['image4'] }}" />
+                    <img src="/storage/{{ $data['image3'] }}" />
                 </div>
                 <div class="blog-slider__content">
                     <span class="blog-slider__code">25 April 2022</span>

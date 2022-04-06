@@ -52,7 +52,28 @@ class AdvertiserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {$user=User::create([
+    {
+        $rules=[
+            'name' => ['required','unique:users', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+             'mobile'=>['required','min:11','max:15','unique:users'],
+             'address'=>['required','min:11','max:255'],
+            //  'id_photo'=>['required','min:11','max:255','unique:users'],
+            //  'national_id'=>['required','min:11','max:255','unique:users'],
+            //  'bank_account'=>['required','min:11','max:255','unique:users'],
+           ];
+            $Validator=Validator::make($request->all(),$rules,[
+                'name.nique'=>'THE NAME nique',
+                 'email.unique'=>'THE NAME nique ',
+                // 'id_photo.required'=>' the id_photo required'
+                ]);
+        if($Validator->fails()){
+            return redirect()->back()->withErrors($Validator)->withInputs($request->all());   }
+            $image=$request->file("id_photo");
+
+
+        $user=User::create([
 
         'name'=>$request['name'],
         'email'=>$request['email'],

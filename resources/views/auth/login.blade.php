@@ -60,7 +60,7 @@
                             <span></span>
                             <span></span>
                                     
-                            submit
+                            Login
                             </a>
 
                         @if (Route::has('password.request'))

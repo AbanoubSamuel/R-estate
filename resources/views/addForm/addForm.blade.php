@@ -18,10 +18,10 @@
       
               @csrf
                       <p>
-                        <label for="nome" class="colocar_nome">Advertiser Name
+                        <label for="nome" class="colocar_nome">Title
                           <span class="obrigatorio">*</span>
                         </label>
-                          <input type="text" name="name" id="nome" required="obrigatorio" placeholder="Ahmed">
+                          <input type="text" name="name" id="nome" required="obrigatorio" placeholder="Unit S87">
                       </p>
                     
                       <p>

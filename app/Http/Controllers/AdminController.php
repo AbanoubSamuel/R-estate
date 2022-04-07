@@ -87,21 +87,6 @@ class AdminController extends Controller
         //
     }
 
-
-
-
-
-    // public function showAdver()
-    // {
-    //  $data=User::where('isAdmin','Advertiser')->get();
-    //  //dd($data);
-    //     return view ('sidebar.advertiser',['data'=>$data]);
-
-    //}
-
-
-    
-
     /**
      * Show the form for editing the specified resource.
      *

@@ -8,7 +8,8 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('registerAdvertiser.store') }}"  enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('registerAdvertiser.store') }}"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">
@@ -74,72 +75,79 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="number" class="form-control" name="age">
-                                    </div>
                                 </div>
-                                <div class="  row mb-3">
-                                    <label for="MObile"
-                                        class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
+                            </div>
 
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="number" class="form-control" name="mobile"
-                                            required autocomplete="new-password">
-                                    </div>
+                            <div class="  row mb-3">
+                                <label for="MObile"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="text" @error('mobile') is-invalid @enderror" class="form-control" name="mobile" required
+                                        autocomplete="mobile">
+
+                                    @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="password-confirm"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="text" class="form-control" name="address"
-                                            required autocomplete="new-password">
-                                    </div>
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="text" class="form-control" name="address" required
+                                        autocomplete="new-password">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-end">{{ __('Bank Account') }}</label>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="password-confirm"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Bank Account') }}</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="number" class="form-control"
-                                            name="bank_account" required autocomplete="new-password">
-                                    </div>
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="number" class="form-control" name="bank_account"
+                                        required autocomplete="new-password">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-end">{{ __('National ID') }}</label>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="password-confirm"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('National ID') }}</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="number" class="form-control" name="national_id"
-                                            required autocomplete="new-password">
-                                    </div>
-
-                                    <label for="formFileMultiple" class="form-label">Multiple files input
-                                        example</label>
-                                    <input class="form-control" name="id_photo" type="file" id="formFileMultiple" multiple />
-                                </div>
-
-                                <div class="genderClass">
-                                    <label for="form-check">Gender:</label>
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">male</label>
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">female</label>
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="number" class="form-control" name="national_id"
+                                        required autocomplete="new-password">
                                 </div>
 
+                                <label for="formFileMultiple" class="form-label">Multiple files input
+                                    example</label>
+                                <input class="form-control" name="id_photo" type="file" id="formFileMultiple" multiple />
+                            </div>
+
+                            <div class="genderClass">
+                                <label for="form-check">Gender:</label>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">male</label>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                    checked>
+                                <label class="form-check-label" for="flexRadioDefault2">female</label>
+                            </div>
 
 
 
 
 
-                                <div class="row mb-0">
-                                    <div class="col-md-6 offset-md-4">
 
-                                        <button type="submit" class="btn btn-primary">
-                                            {{ __('Register') }}
-                                        </button>
-                                    </div>
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>

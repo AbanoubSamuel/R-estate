@@ -1,12 +1,12 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
-@section('content')
+@section('content') -->
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card"> -->
                 
-                <div class="login-box">
+            <div class="login-box">
                     <h2>Login</h2>
                     <form method="POST" id="GFG" action="{{ route('login') }}">
                         @csrf
@@ -60,7 +60,7 @@
                             <span></span>
                             <span></span>
                                     
-                            Login
+                            submit
                             </a>
 
                         @if (Route::has('password.request'))
@@ -77,8 +77,8 @@
                 }
                </script>
             </div>
-             </div>
+            <!-- </div>
         </div>
     </div>
 </div>
-@endsection
+@endsection -->

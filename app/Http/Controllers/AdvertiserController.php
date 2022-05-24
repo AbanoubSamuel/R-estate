@@ -38,13 +38,14 @@ class AdvertiserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    
+    protected function store(Request $request)
     {
         $rules=[
             'name' => ['required','unique:users', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            //  'mobile'=>['required','min:11','max:15','unique:users'],
+            'mobile'=>['required','string','min:11','max:15','unique:users']
             //  'address'=>['required','min:11','max:255'],
             //  'id_photo'=>['required','min:11','max:255','unique:users'],
             //  'national_id'=>['required','min:11','max:255','unique:users'],
@@ -53,10 +54,13 @@ class AdvertiserController extends Controller
         $Validator=Validator::make($request->all(), $rules, [
                 'name.unique'=>'This username is already taken !',
                  'email.unique'=>'This email is already taken ! Please use a diffrent one.',
-                'id_photo.required'=>' You must submit an ID photo'
+                // 'id_photo.required'=>' You must submit an ID photo',
+                'mobile.unique'=> 'This mobile number is already registered !'
+            
                 ]);
         if ($Validator->fails()) {
             return redirect()->back()->withErrors($Validator)->withInputs($request->all());
+        
         }
 
 
